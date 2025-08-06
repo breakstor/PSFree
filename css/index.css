@@ -3,7 +3,11 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: #222222;
+    body {
+  background-image: url("https://www2.0zz0.com/2025/08/06/22/437816786.png"); /* مسار نسبي */
+  background-repeat: no-repeat; /* لا تكرر الصورة */
+  background-size: cover; /* تغطية كاملة للعنصر */
+}
 }
 
 body {
