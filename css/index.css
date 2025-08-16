@@ -1,9 +1,13 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: #777777;
+    body {
+  background-image: url('https://www2.0zz0.com/2025/08/16/06/311462599.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* لضبط ارتفاع الصفحة */
+  margin: 0; /* لإزالة الهوامش الافتراضية */
+}
+
 }
 
 body {
