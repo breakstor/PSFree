@@ -1,4 +1,4 @@
-# PSFree
+hi#  breakstorPSFree
 PSFree is a unstable and work in progress jailbreak multi firmware website for the PlayStation 4 and the PlayStation 5.
 
 This repo is based on the work of two other repo :
@@ -26,7 +26,7 @@ This repo only support PS4 for now.
 # How to run
 
 ## Website
-[Click Here](https://nazky.github.io/PSFree/)
+[Click Here](https://breskstor.github.io/psfree/)
 
 ## Locally
 
