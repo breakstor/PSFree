@@ -2,11 +2,11 @@
 <html manifest="./PSFree.manifest">
   <head>
     <script>
-        function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));document.title="تثبيت ملفات التعديل : " + Percent + "%";}
-        function DisplayCacheProgress(){setTimeout(function(){;document.title="تم التثبيت ";},1000);setTimeout(function(){window.location.href = document.referrer;},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+        function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));document.title="Installing offline cache: " + Percent + "%";}
+        function DisplayCacheProgress(){setTimeout(function(){;document.title="Cache Success !";},1000);setTimeout(function(){window.location.href = document.referrer;},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
     </script>
     <meta charset="UTF-8">
-    <title> Break Stor PSFree</title>
+    <title>PSFree</title>
     <link rel='stylesheet' href='./css/index.css'>
   </head>
   <body>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="header">
-      <div class="header-title" id="header-title"> Break Store PSFree</div>
+      <div class="header-title" id="header-title">PSFree</div>
     </div>
 
     <pre id="update-results" style="white-space: pre-wrap; margin-top: 10px;"></pre>
@@ -43,7 +43,7 @@
       <nav class="floating-menu-payloads">
         <button id="toolb" onclick="showtoolspayloads()">Tools</button>
         <button id="gameb" onclick="showgamepayloads()">Games</button>
-        <button id="linuxb" onclick="showlinuxpayloads()">Linux</button>
+        <button style="display: none;" id="linuxb" onclick="showlinuxpayloads()">Linux</button>
       </nav>
       <div id="payloads-tools" style="display: block;">
         <h2 id="tools">Tools</h2>
@@ -136,61 +136,79 @@
         <p>Version: 1.5.1</p>
         <p>A simple web interface for PS4 jailbreak.</p>
       </div>
-      <button  onclick="closeabout()" class="close-btn" id="close-about">Close</button>
+      <div class="credits">
+        <h3>Credits</h3>
+        <div class="credits-container">
+          <a href="https://github.com/Al-Azif" target="_blank">Al-Azif</a>
+          <a href="https://github.com/kmeps4" target="_blank">kmeps4</a>
+          <a href="https://github.com/GoldHEN" target="_blank">GoldHEN</a>
+          <a href="https://github.com/Scene-Collective" target="_blank">Scene-Collective</a>
+          <a href="https://github.com/ps4boot" target="_blank">ps4boot</a>
+          <a href="https://github.com/SiSTR0" target="_blank">SiSTR0</a>
+          <a href="https://github.com/EchoStretch" target="_blank">EchoStretch</a>
+          <a href="https://github.com/Nazky" target="_blank">Nazky</a>
+        </div>
+      </div>
+      <button onclick="closeabout()" class="close-btn" id="close-about"></button>
     </div>
 
     <!-- Settings Popup -->
     <div class="overlay" id="overlay-popup"></div>
     <div class="popup" id="settings-popup">
       <h2>Settings PSFree</h2>
-
-      <div id="PS4FWOK">
-        <h3>PS4 Firmwares supported</h3>
-        <div id="listfw">
-          <p>7.00 (HEN only)</p>
-          <p>7.01 (HEN only)</p>
-          <p>7.02 (HEN only)</p>
-          <p>7.50 (HEN only)</p>
-          <p>7.51 (HEN only)</p>
-          <p>7.55 (HEN only)</p>
-          <p>8.00 (HEN only)</p>
-          <p>8.01 (HEN only)</p>
-          <p>8.03 (HEN only)</p>
-          <p>8.50 (HEN only)</p>
-          <p>8.52 (HEN only)</p>
-          <p>9.00</p>
-          <p>9.03</p>
-          <p>9.04 (HEN only)</p>
-          <p>9.50 (HEN only)</p>
-          <p>9.51 (HEN only)</p>
-          <p>9.60</p>
+      <div class="main-container">
+        <div class="listfw-container">
+          <div class="settings-container">
+            <h3>PS4 Firmwares supported</h3>
+            <div id="listfw">
+              <p>7.00</p>
+              <p>7.01</p>
+              <p>7.02</p>
+              <p>7.50</p>
+              <p>7.51</p>
+              <p>7.55</p>
+              <p>8.00</p>
+              <p>8.01</p>
+              <p>8.03</p>
+              <p>8.50</p>
+              <p>8.52</p>
+              <p>9.00</p>
+              <p>9.03</p>
+              <p>9.04</p>
+              <p>9.50</p>
+              <p>9.51</p>
+              <p>9.60</p>
+            </div>
+          </div>
         </div>
         
-      </div>
-
-      <div id="choosejb">
-        <h3>Choose your flavor</h3>
-        <div class="radio-group">
-          <label>
-            <input type="radio" name="hen" value="GoldHEN" onchange="savejbflavor(); choosejb('GoldHEN')"> GoldHEN
-          </label>
-          <label>
-            <input type="radio" name="hen" value="HEN" onchange="savejbflavor(); choosejb('HEN')"> HEN
-          </label>
+        <div class="choosejb-container">
+          <div class="settings-container">
+            <h3>Choose your flavor</h3>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="hen" value="GoldHEN" onchange="savejbflavor(); choosejb('GoldHEN')"> GoldHEN
+              </label>
+              <label>
+                <input type="radio" name="hen" value="HEN" onchange="savejbflavor(); choosejb('HEN')"> HEN
+              </label>
+            </div>
+              <label>
+                <input type="checkbox" id="ckbaj" />
+                <span>Auto-Jailbreak</span>
+              </label>
+              <label>
+                <input type="checkbox" id="ckbdc" checked />
+                <span>Enable Debug Console</span>
+              </label>
+          </div>
         </div>
-        <label id="autojbchkb">
-          <input type="checkbox" id="ckbaj" />
-          <p id="agtext">Auto-Jailbreak</p>
-        </label>
-        <label id="debugconsolechkb">
-          <input type="checkbox" id="ckbdc" checked />
-          <p id="agtext">Enable Debug Console</p>
-        </label>
       </div>
-
-      <button onclick="closesettings()" class="close-btn" id="close-settings">Close</button>
-      <button data-func="load_PSFreeFix" class="install-psfrf" id="install-psfrf" style="display: none;">Install PSFree-Fix</button>
-      <!--<button data-func="load_AppCache" class="install-psfrl" id="install-psfrl">Install PSFree-Lite</button>-->
+      
+      <div class="button-container">
+        <button data-func="load_PSFreeFix" class="install-psfrf" id="install-psfrf" style="display: none;">Install PSFree-Fix</button>
+      </div>
+      <button onclick="closesettings()" class="close-btn" id="close-settings"></button>
     </div>
     <script src='./js/index.js'></script>
   </body>
