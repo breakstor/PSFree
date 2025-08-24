@@ -115,7 +115,12 @@ function CheckFW() {
     const fwVersion = match ? match[1] : "Unknown"; // Get the firmware version or default to "Unknown"
 
     if (
-      fwVersion === '9.00' || fwVersion === '9.03' || fwVersion === '9.60'
+      fwVersion === '9.00' || fwVersion === '9.03' || fwVersion === '9.60' ||
+      fwVersion === '7.00' || fwVersion === '7.01' || fwVersion === '7.02' ||
+      fwVersion === '7.50' || fwVersion === '7.51' || fwVersion === '7.55' ||
+      fwVersion === '8.00' || fwVersion === '8.01' || fwVersion === '8.03' ||
+      fwVersion === '8.50' || fwVersion === '8.52' || fwVersion === '9.04' ||
+      fwVersion === '9.50' || fwVersion === '9.51'
     ) {
       document.getElementById('PS4FW').textContent = `PS4 FW: ${fwVersion} | Compatible`;
       document.getElementById('PS4FW').style.color = 'green';
@@ -124,18 +129,9 @@ function CheckFW() {
       if (ps4fw === '903' || ps4fw === '960') {
         document.getElementById('gameb').style.display = 'none';
       }
-    } else if (
-      fwVersion === '7.00' || fwVersion === '7.01' || fwVersion === '7.02' ||
-      fwVersion === '7.50' || fwVersion === '7.51' || fwVersion === '7.55' ||
-      fwVersion === '8.00' || fwVersion === '8.01' || fwVersion === '8.03' ||
-      fwVersion === '8.50' || fwVersion === '8.52' || fwVersion === '9.04' ||
-      fwVersion === '9.50' || fwVersion === '9.51'
-    ) {
-      document.getElementById('PS4FW').textContent = `PS4 FW: ${fwVersion} | Semi-Compatible`;
-      document.getElementById('PS4FW').style.color = 'orange';
-      choosejb('HEN');
-      ps4fw = fwVersion.replace('.', '');
-      document.getElementById('linuxb').style.display = 'none';
+      if (ps4fw === '900' || ps4fw === '903' || ps4fw === '960'){
+        document.getElementById('linuxb').style.display = 'flex';
+      }
     } else {
       document.getElementById('PS4FW').textContent = `PS4 FW: ${fwVersion || 'Unknown'} | Incompatible`;
       document.getElementById('PS4FW').style.color = 'red';
